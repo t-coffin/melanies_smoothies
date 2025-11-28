@@ -9,6 +9,8 @@ st.title(f":cup_with_straw: Customize Your Smoothie :cup_with_straw: {st.__versi
 st.write(
   """Choose the fruits you want in your smoothie!
   """ )
+#variable for search_on
+search_on=pd_df.loc[pd.df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
 
 #--------------------
 # Entry box for order name
