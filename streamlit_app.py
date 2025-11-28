@@ -9,8 +9,7 @@ st.title(f":cup_with_straw: Customize Your Smoothie :cup_with_straw: {st.__versi
 st.write(
   """Choose the fruits you want in your smoothie!
   """ )
-#variable for search_on
-search_on=pd_df.loc[pd.df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
+
 
 #--------------------
 # Entry box for order name
@@ -21,6 +20,8 @@ st.write("The name on your smoothie will be:", name_on_order)
 cnx = st.connection("snowflake")
 session = cnx.session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON'))
+#variable for search_on
+search_on=pd_df.loc[pd.df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
 #st.dataframe(data=my_dataframe, use_container_width=True)
 #st.stop()
 
